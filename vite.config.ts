@@ -1,13 +1,12 @@
 import { defineConfig } from "vite"
 import pluginVue from "@vitejs/plugin-vue"
 import vueJsx from "@vitejs/plugin-vue-jsx"
-import { presetUno, presetAttributify, presetIcons } from "unocss";
-import Unocss from "unocss/vite";
+import unocss from "./config/unocss";
 
 const rollupOptions = {
-
   external: ["vue", "vue-router"],
   output: {
+    assetFileNames: `assets/[name].css`,
     globals: {
       vue: "Vue",
     },
@@ -18,13 +17,12 @@ export default defineConfig({
   plugins: [
     pluginVue(),
     vueJsx(),
-    Unocss({
-      presets: [presetUno(), presetAttributify(), presetIcons()],
-    })
+    unocss()
   ],
   build: {
     rollupOptions,
     minify: false,
+    cssCodeSplit: true,   // 追加
     lib: {
       entry: "./src/entry.ts",
       name: "PlutoUI",

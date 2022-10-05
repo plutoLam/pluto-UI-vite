@@ -1,5 +1,4 @@
 import { createApp } from "vue";
-import LButton from "./button"
-import Test from './JSXButton'
+import App from "./App.vue";
 
-createApp(Test).mount("#app")
+createApp(App).mount("#app")

@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="../../dist/assets/entry.css">
 <h1>Demo</h1>
 <div id="app"></div>
 <script type="module">
@@ -10,9 +11,9 @@
 
   createApp({
     template: `
-<LButton/>
-<JSXButton/>
-<SFCButton/>
+    <LButton color="red" icon="search">红色按钮</LButton>
+    <JSXButton/>
+    <SFCButton/>
 `,
   })
     .component(SFCButton.name, SFCButton)
