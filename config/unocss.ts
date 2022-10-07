@@ -14,7 +14,7 @@ const colors = [
   "purple",
   "pink",
 ];
-
+console.log('color', colors.map((v) => `text-${v}-500`))
 const safelist = [
   ...[
     "search",
@@ -26,10 +26,20 @@ const safelist = [
     "add",
     "share",
   ].map((v) => `i-ic-baseline-${v}`),
-  ...colors.map((v) => `bg-${v}-500`),
   ...colors.map((v) => `bg-${v}-100`),
-  ...colors.map((v) => `hover:bg-${v}-700`),
+  ...colors.map((v) => `bg-${v}-400`),
+  ...colors.map((v) => `bg-${v}-500`),
+  ...colors.map((v) => `hover:bg-${v}-100`),
+  ...colors.map((v) => `hover:bg-${v}-300`),
+  ...colors.map((v) => `hover:bg-${v}-400`),
+  ...colors.map((v) => `hover:bg-${v}-500`),
+  ...colors.map((v) => `border-${v}-400`),
+  ...colors.map((v) => `border-${v}-500`),
   ...colors.map((v) => `text-${v}-500`),
+  ...colors.map((v) => `hover:text-${v}-500`),
+  'text-white',
+  'hover:text-black',
+  'hover:text-white',
   'py-1',
   'py-2',
   'py-3',
