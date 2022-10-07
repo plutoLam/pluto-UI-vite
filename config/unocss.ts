@@ -14,7 +14,6 @@ const colors = [
   "purple",
   "pink",
 ];
-console.log('color', colors.map((v) => `text-${v}-500`))
 const safelist = [
   ...[
     "search",

@@ -13,8 +13,8 @@
 
 <script>
 import LButton from "./button";
-import Test from "./JSXButton";
-import PlutoUI from "./entry";
+// import Test from "./JSXButton";
+// import PlutoUI from "./entry";
 export default {
   components: {
     LButton,
@@ -22,5 +22,4 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-</style>
+<style lang="scss" scoped></style>
