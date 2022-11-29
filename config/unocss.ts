@@ -1,6 +1,6 @@
 import { presetUno, presetAttributify, presetIcons } from "unocss";
 import Unocss from "unocss/vite";
-import "@iconify-json/ic"
+import "@iconify-json/ic";
 
 const colors = [
   "white",
@@ -36,17 +36,17 @@ const safelist = [
   ...colors.map((v) => `border-${v}-500`),
   ...colors.map((v) => `text-${v}-500`),
   ...colors.map((v) => `hover:text-${v}-500`),
-  'text-white',
-  'hover:text-black',
-  'hover:text-white',
-  'py-1',
-  'py-2',
-  'py-3',
-  'px-2',
-  'px-4',
-  'px-6',
-  'rounded-99',
-  'rounded-lg',
+  "text-white",
+  "hover:text-black",
+  "hover:text-white",
+  "py-1",
+  "py-2",
+  "py-3",
+  "px-2",
+  "px-4",
+  "px-6",
+  "rounded-99",
+  "rounded-lg",
 ];
 
 export default () =>
