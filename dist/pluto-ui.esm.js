@@ -23,16 +23,15 @@ const props = {
   }
 };
 const sizeMap = {
-  "s": [1, 2],
-  "m": [2, 4]
+  s: [1, 2],
+  m: [2, 4]
 };
-const MyButton = defineComponent({
+const Button = defineComponent({
   name: "LButton",
   props,
   setup(props2, {
     slots
   }) {
-    console.log("props: ", props2);
     return () => createVNode("button", {
       "class": `
       py-${sizeMap[props2.size][0]} 
@@ -40,11 +39,11 @@ const MyButton = defineComponent({
       rounded-${props2.round ? "99" : "lg"}
       bg-${props2.color}-${props2.plain ? "100" : "500"}
       hover:bg-${props2.color}-400
-      border-${props2.color}-${props2.plain ? "500" : "500"}
+      border-${props2.plain ? props2.color : "black"}-${props2.plain ? "500" : "500"}
       cursor-pointer
       border-solid
       text-${props2.plain ? props2.color + "-500" : "white-500"}
-      hover:text-white
+      hover:text-${props2.plain ? "black" : "white"}
       transition duration-300 ease-in-out transform hover:scale-105
       mx-1
     `
@@ -74,13 +73,13 @@ const JSXButton = defineComponent({
   }
 });
 function install(app) {
-  app.component(MyButton.name, MyButton);
+  app.component(Button.name, Button);
   app.component(SFCButton.name, SFCButton);
   app.component(JSXButton.name, JSXButton);
 }
 export {
   JSXButton,
-  MyButton,
+  Button as MyButton,
   SFCButton,
   install as default
 };
