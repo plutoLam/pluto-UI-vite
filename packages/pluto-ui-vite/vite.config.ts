@@ -41,6 +41,8 @@ export const config = {
     transformMode: {
       web: [/.[tj]sx$/],
     },
+    provider: "istanbul", // or 'c8',
+    reporter: ["dot", "json"], // 没有text这个选项，加上这个报错
   },
 }
 
