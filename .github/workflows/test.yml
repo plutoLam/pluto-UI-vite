@@ -13,7 +13,7 @@ jobs:
       with:
         version: 6.32.2
     - name: Install modules
-      run: pnpm install
+      run: cd packages/pluto-ui-vite && pnpm install
     - name: Run Test
       run: pnpm run lint
   UnitTest:
