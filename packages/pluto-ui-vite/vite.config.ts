@@ -2,6 +2,7 @@ import { defineConfig } from "vite";
 import pluginVue from "@vitejs/plugin-vue";
 import vueJsx from "@vitejs/plugin-vue-jsx";
 import unocss from "./config/unocss";
+import { UserConfig } from "vite";
 
 const rollupOptions = {
   external: ["vue", "vue-router"],
@@ -13,20 +14,22 @@ const rollupOptions = {
   },
 };
 
-export default defineConfig({
+export const config = {
   plugins: [pluginVue(), vueJsx(), unocss()],
   build: {
     rollupOptions,
-    minify: false,
-    cssCodeSplit: true, // 追加
+    minify: false, // boolean | 'terser' | 'esbuild' 是否开启混淆 两个混淆工具  terser、esbuild
+    sourcemap: true, // 输出单独 source文件
+    brotliSize: true,  // 生成压缩大小报告
+    cssCodeSplit: true,
     lib: {
       entry: "./src/entry.ts",
       name: "PlutoUI",
-      fileName: "pluto-ui",
-      // 导出模块格式
-      formats: ["esm", "umd", "iife"],
-      sourcemap: true, // 输出单独 source文件
+      fileName: "pluto-ui", // 输出文件名的前缀，和模块类型配合组成最终的文件名
+      // @ts-ignore
+      formats: ["esm", "umd", "iife"], // 导出模块类型
     },
+    outDir: "./dist"
   },
   test: {
     // enable jest-like global test APIs
@@ -39,4 +42,6 @@ export default defineConfig({
       web: [/.[tj]sx$/],
     },
   },
-});
+}
+
+export default defineConfig(config as UserConfig);

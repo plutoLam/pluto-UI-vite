@@ -1,0 +1,13 @@
+{
+  "0 error pnpm": {
+    "fileName": "D:\\1-front-end\\Engineering\\pluto-ui-vite\\packages\\pluto-ui-vite\\dist\\Button\\package.json",
+    "codeFrame": "\u001b[0m \u001b[90m 3 |\u001b[39m           \u001b[32m\"main\"\u001b[39m\u001b[33m:\u001b[39m \u001b[32m\"index.umd.js\"\u001b[39m\u001b[33m,\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 4 |\u001b[39m           \u001b[32m\"module\"\u001b[39m\u001b[33m:\u001b[39m \u001b[32m\"index.umd.js\"\u001b[39m\u001b[33m,\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 5 |\u001b[39m         }\u001b[0m\n\u001b[0m \u001b[90m   |\u001b[39m         \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m",
+    "code": "ERR_PNPM_JSON_PARSE",
+    "err": {
+      "name": "pnpm",
+      "message": "Unexpected token \"}\" (0x7D) in JSON at position 122 while parsing near \"...ex.umd.js\\\",\\n        }\" in D:\\1-front-end\\Engineering\\pluto-ui-vite\\packages\\pluto-ui-vite\\dist\\Button\\package.json \n\n\u001b[0m \u001b[90m 3 |\u001b[39m           \u001b[32m\"main\"\u001b[39m\u001b[33m:\u001b[39m \u001b[32m\"index.umd.js\"\u001b[39m\u001b[33m,\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 4 |\u001b[39m           \u001b[32m\"module\"\u001b[39m\u001b[33m:\u001b[39m \u001b[32m\"index.umd.js\"\u001b[39m\u001b[33m,\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 5 |\u001b[39m         }\u001b[0m\n\u001b[0m \u001b[90m   |\u001b[39m         \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n",
+      "code": "ERR_PNPM_JSON_PARSE",
+      "stack": "pnpm: Unexpected token \"}\" (0x7D) in JSON at position 122 while parsing near \"...ex.umd.js\\\",\\n        }\" in D:\\1-front-end\\Engineering\\pluto-ui-vite\\packages\\pluto-ui-vite\\dist\\Button\\package.json \n\n\u001b[0m \u001b[90m 3 |\u001b[39m           \u001b[32m\"main\"\u001b[39m\u001b[33m:\u001b[39m \u001b[32m\"index.umd.js\"\u001b[39m\u001b[33m,\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 4 |\u001b[39m           \u001b[32m\"module\"\u001b[39m\u001b[33m:\u001b[39m \u001b[32m\"index.umd.js\"\u001b[39m\u001b[33m,\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 5 |\u001b[39m         }\u001b[0m\n\u001b[0m \u001b[90m   |\u001b[39m         \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\n    at parseJson (C:\\Users\\Pluto\\AppData\\Roaming\\npm\\node_modules\\pnpm\\dist\\pnpm.cjs:3121:27)\n    at readJsonFile (C:\\Users\\Pluto\\AppData\\Roaming\\npm\\node_modules\\pnpm\\dist\\pnpm.cjs:19768:42)\n    at async readExactProjectManifest (C:\\Users\\Pluto\\AppData\\Roaming\\npm\\node_modules\\pnpm\\dist\\pnpm.cjs:19901:34)\n    at async C:\\Users\\Pluto\\AppData\\Roaming\\npm\\node_modules\\pnpm\\dist\\pnpm.cjs:49189:16"
+    }
+  }
+}

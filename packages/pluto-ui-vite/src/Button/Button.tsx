@@ -56,7 +56,7 @@ export default defineComponent({
       border-solid
       text-${props.plain ? props.color + "-500" : "white-500"}
       hover:text-${props.plain ? "black" : "white"}
-      transition duration-300 ease-in-out transform hover:scale-105
+      transition duration-300 ease-in-out transform
       mx-1
     `}
       >

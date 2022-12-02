@@ -1,0 +1,51 @@
+<h1>Demo IFFE OnDemand</h1>
+<div id="app"></div>
+<link rel="stylesheet" href="../dist/assets/entry.css">
+<script src="../node_modules/vue/dist/vue.global.js"></script>
+<script src="../dist/button/index.iife.js"></script>
+<script>
+  const { createApp } = Vue
+  console.log('vue', Vue)
+  console.log('SmartyUI', Button)
+  createApp({
+    template: `
+        <div style="margin-bottom:20px;">
+            <LButton color="blue">主要按钮</LButton>
+            <LButton color="green">绿色按钮</LButton>
+            <LButton color="gray">灰色按钮</LButton>
+            <LButton color="yellow">黄色按钮</LButton>
+            <LButton color="red">红色按钮</LButton>
+        </div>
+        <div style="margin-bottom:20px;"
+        >
+            <LButton color="blue" plain>朴素按钮</LButton>
+            <LButton color="green" plain>绿色按钮</LButton>
+            <LButton color="gray" plain>灰色按钮</LButton>
+            <LButton color="yellow" plain>黄色按钮</LButton>
+            <LButton color="red" plain>红色按钮</LButton>
+        </div>
+        <div style="margin-bottom:20px;">
+            <LButton size="small" plain>小按钮</LButton>
+            <LButton size="medium" plain>中按钮</LButton>
+            <LButton size="large" plain>大按钮</LButton>
+        </div>
+        <div style="margin-bottom:20px;">
+            <LButton color="blue" round plain icon="search">搜索按钮</LButton>
+            <LButton color="green" round plain icon="edit">编辑按钮</LButton>
+            <LButton color="gray" round plain icon="check">成功按钮</LButton>
+            <LButton color="yellow" round plain icon="message">提示按钮</LButton>
+            <LButton color="red" round plain icon="delete">删除按钮</LButton>
+        </div>
+        <div style="margin-bottom:20px;">
+            <LButton color="blue" round plain icon="search"></LButton>
+            <LButton color="green" round plain icon="edit"></LButton>
+            <LButton color="gray" round plain icon="check"></LButton>
+            <LButton color="yellow" round plain icon="message"></LButton>
+            <LButton color="red" round plain icon="delete"></LButton>
+        </div>
+    `
+  })
+    .use(Button.default)
+    .mount('#app')
+
+</script>
