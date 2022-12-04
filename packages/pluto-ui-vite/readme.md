@@ -9,7 +9,10 @@
 </p>
 <img src="https://img.shields.io/badge/build-passing-green">
 <img src="https://img.shields.io/badge/test-passing-green">
-
+<a href="https://codecov.io/gh/plutoLam/pluto-ui-monorepo" > 
+ <img src="https://codecov.io/gh/plutoLam/pluto-ui-monorepo/branch/master/graph/badge.svg?token=9OZ5WBCWNV"/> 
+ </a>
+ 
 ## Features
 
 前端工程化演示项目。
