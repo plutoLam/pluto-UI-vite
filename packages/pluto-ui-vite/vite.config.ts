@@ -7,6 +7,7 @@ import { UserConfig } from "vite";
 const rollupOptions = {
   external: ["vue", "vue-router"],
   output: {
+    assetFileNames: `[name].css`, // 防止出现哈希后缀
     globals: {
       vue: "Vue",
     },

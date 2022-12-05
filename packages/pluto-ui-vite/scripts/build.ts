@@ -8,10 +8,26 @@ const buildAll = async () => {
 
   // 全量打包
   await build(defineConfig(config as UserConfig) as InlineConfig);
-  // await build(defineConfig({}))
 
+  const baseOutDir = config.build.outDir;
+  console.log('baseOutDir: ', baseOutDir);
+  const packageJson = require('../package.json');
+  packageJson.main = "pluto-ui.umd.js";
+  packageJson.module = "pluto-ui.esm.js";
+  // packageJson.types = "pluto-ui.d.ts";
+  fs.outputFile(
+    path.resolve(baseOutDir, `package.json`),
+    JSON.stringify(packageJson, null, 2)
+  );
+
+  // 拷贝 README.md文件
+  fs.copyFileSync(
+    path.resolve("./readme.md"),
+    path.resolve(baseOutDir + "/readme.md")
+  );
+
+  // 分块打包
   const srcDir = path.resolve(__dirname, "../src/");
-  console.log('srcDir------------: ', srcDir);
   fs.readdirSync(srcDir)
     .filter((name) => {
       // 只要目录不要文件，且里面包含index.ts
@@ -20,10 +36,8 @@ const buildAll = async () => {
       return isDir && fs.readdirSync(componentDir).includes("index.ts");
     })
     .forEach(async (name) => {
-      console.log('config.build: ', config.build);
       // 当有两个组件时，这里的outDir会一层套一层
       const outDir = path.resolve(config.build.outDir, name);
-      console.log('outDir-------------------: ', outDir);
       const custom = {
         lib: {
           entry: path.resolve(srcDir, name),
