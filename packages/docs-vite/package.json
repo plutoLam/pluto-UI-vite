@@ -10,6 +10,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "pluto-ui-vite": "workspace:^1.0.1"
+    "pluto-ui-vite": "workspace:^1.0.3"
   }
 }
