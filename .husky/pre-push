@@ -3,4 +3,5 @@
 
 echo ====单元测试====
 cd packages/pluto-ui-vite
-pnpm test:run
+# pnpm test:run
+npm version patch
