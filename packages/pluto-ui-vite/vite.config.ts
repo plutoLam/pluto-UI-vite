@@ -7,7 +7,6 @@ import { UserConfig } from "vite";
 const rollupOptions = {
   external: ["vue", "vue-router"],
   output: {
-    assetFileNames: `[name].css`,
     globals: {
       vue: "Vue",
     },
