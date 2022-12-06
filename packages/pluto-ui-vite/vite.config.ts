@@ -3,6 +3,7 @@ import pluginVue from "@vitejs/plugin-vue";
 import vueJsx from "@vitejs/plugin-vue-jsx";
 import unocss from "./config/unocss";
 import { UserConfig } from "vite";
+import dts from "vite-plugin-dts";
 
 const rollupOptions = {
   external: ["vue", "vue-router"],
@@ -15,12 +16,21 @@ const rollupOptions = {
 };
 
 export const config = {
-  plugins: [pluginVue(), vueJsx(), unocss()],
+  plugins: [
+    pluginVue(),
+    vueJsx(),
+    unocss(),
+    dts({
+      outputDir: "./dist/types",
+      insertTypesEntry: false, // 插入TS 入口
+      copyDtsFiles: true, // 是否将源码里的 .d.ts 文件复制到 outputDir
+    }),
+  ],
   build: {
     rollupOptions,
     minify: false, // boolean | 'terser' | 'esbuild' 是否开启混淆 两个混淆工具  terser、esbuild
     sourcemap: true, // 输出单独 source文件
-    brotliSize: true,  // 生成压缩大小报告
+    brotliSize: true, // 生成压缩大小报告
     cssCodeSplit: true,
     lib: {
       entry: "./src/entry.ts",
@@ -29,7 +39,7 @@ export const config = {
       // @ts-ignore
       formats: ["esm", "umd", "iife"], // 导出模块类型
     },
-    outDir: "./dist"
+    outDir: "./dist",
   },
   test: {
     // enable jest-like global test APIs
@@ -44,6 +54,6 @@ export const config = {
     provider: "istanbul", // or 'c8',
     reporter: ["dot", "json"], // 没有text这个选项，加上这个报错
   },
-}
+};
 
 export default defineConfig(config as UserConfig);

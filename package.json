@@ -27,6 +27,6 @@
     "vue": "3.2.37"
   },
   "devDependencies": {
-    "husky": "^8.0.1"
+    "husky": "^8.0.2"
   }
 }

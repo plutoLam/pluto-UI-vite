@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import LButton from "./button";
+import { MyButton as LButton } from "./Button";
 // import Test from "./JSXButton";
 // import PlutoUI from "./entry";
 export default {

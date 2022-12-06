@@ -2,6 +2,7 @@ import clone from "../utils/clone.js";
 import inquirer from "inquirer";
 import { resolve } from "path";
 import fs from "fs";
+import { remove } from "fs-extra";
 
 import chalk from "chalk";
 const log = (...args) => console.log(chalk.green(...args));
@@ -20,7 +21,7 @@ export default async () => {
   log("🚌 创建项目:" + name);
 
   // 从github克隆项目到指定文件夹
-  await clone("github:smarty-team/smarty-ui-app-js-template", name);
+  await clone("github:plutoLam/pluto-ui-app-template", name);
 
   // 生成路由定义
   compile(
@@ -30,6 +31,8 @@ export default async () => {
     `./${name}/package.json`,
     `./${name}/template/package.hbs.json`
   );
+
+  remove(`./${name}/template`)
 
   log(`
 👌 安装完成：
