@@ -2,6 +2,7 @@ import fs from "fs-extra";
 import path from "path";
 import { config } from "../vite.config";
 import { build, InlineConfig, defineConfig, UserConfig } from "vite";
+import { generateDTS } from "./type";
 const buildAll = async () => {
   // const inline: InlineConfig =
   //   viteConfig;
@@ -10,11 +11,12 @@ const buildAll = async () => {
   await build(defineConfig(config as UserConfig) as InlineConfig);
 
   const baseOutDir = config.build.outDir;
-  console.log('baseOutDir: ', baseOutDir);
-  const packageJson = require('../package.json');
+  console.log("baseOutDir: ", baseOutDir);
+  const packageJson = require("../package.json");
   packageJson.main = "pluto-ui.umd.js";
   packageJson.module = "pluto-ui.esm.js";
-  // packageJson.types = "pluto-ui.d.ts";
+  // ts的类型定义入口文件
+  packageJson.types = "pluto-ui.d.ts";
   fs.outputFile(
     path.resolve(baseOutDir, `package.json`),
     JSON.stringify(packageJson, null, 2)
@@ -24,6 +26,14 @@ const buildAll = async () => {
   fs.copyFileSync(
     path.resolve("./readme.md"),
     path.resolve(baseOutDir + "/readme.md")
+  );
+  console.log(
+    "path",
+    path.normalize(path.resolve(config.build.outDir, `pluto-ui.esm.js`))
+  );
+  // 生成配置DTS配置文件入口
+  generateDTS(
+    path.normalize(path.resolve(config.build.outDir, `pluto-ui.esm.js`))
   );
 
   // 分块打包
@@ -48,7 +58,7 @@ const buildAll = async () => {
         outDir,
       };
       // 防止config改变
-      const copyConfig = Object.assign({}, config)
+      const copyConfig = Object.assign({}, config);
       copyConfig.build = { ...config.build, ...custom };
       await build(defineConfig(copyConfig as UserConfig) as InlineConfig);
 
